@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Uso do Veículo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003d80;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registrar Uso</h1>
+        <form action="{% url 'registrar_uso' veiculo.id %}" method="post">
+            {% csrf_token %}
+            <label for="nome_usuario">Nome do Usuário:</label>
+            <input type="text" id="nome_usuario" name="nome_usuario" required>  <!-- Corrigir nome para "nome_usuario" -->
+            
+            <label for="kilometragem_saida">Quilometragem de Saída:</label>
+            <input type="number" id="kilometragem_saida" name="kilometragem_saida" required>  <!-- Corrigir nome para "kilometragem_saida" -->
+            
+            <label for="kilometragem_chegada">Quilometragem de Chegada:</label>
+            <input type="number" id="kilometragem_chegada" name="kilometragem_chegada" required>
+            
+            <label for="destino">Destino:</label>
+            <input type="text" id="destino" name="destino" required>
+            
+            <label for="horario_saida">Horário de Saída:</label>
+            <input type="datetime-local" id="horario_saida" name="horario_saida" required>
+
+            <label for="horario_chegada">Horário de Chegada:</label>
+            <input type="datetime-local" id="horario_chegada" name="horario_chegada" required>
+            
+            <button type="submit">Registrar</button>
+        </form>
+        
+        
+    </div>
+</body>
+</html>

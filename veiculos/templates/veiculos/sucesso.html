@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Realizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #28a745;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro realizado com sucesso!</h1>
+        <p>Veículo: {{ veiculo.nome }} ({{ veiculo.placa }})</p>
+        <a href="{% url 'lista_veiculos' %}">Voltar à lista de veículos</a>
+    </div>
+    
+</body>
+</html>

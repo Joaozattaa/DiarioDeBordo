@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Veículos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #e0e4ff;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        li a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        li a:hover {
+            color: #002f6c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Veículos</h1>
+        <ul>
+            {% for veiculo in veiculos %}
+                <li>
+                    <a href="{% url 'registrar_uso' veiculo.id %}">{{ veiculo.nome }} - {{ veiculo.placa }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
